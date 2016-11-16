@@ -33,8 +33,8 @@ f=0
 
 #Ho creato questa funzione per fare il tamarro
 def wall():
-	os.system("clear")
-	print '''
+    os.system("clear")
+    print '''
      (                (    (               )      )       
  )\ )  (          )\ ) )\ )  *   )  ( /(   ( /(       
 (()/(  )\        (()/((()/(` )  /(  )\())  )\()) (    
@@ -48,36 +48,36 @@ def wall():
                             '''
                              
 def continuare():
-	yorn=raw_input("\n########## Premere invio per continuare ##########")
+    yorn=raw_input("\n########## Premere invio per continuare ##########")
 
 		
 def client_tcp():
-	target_host=raw_input("Inserire il target Host (prova inizialmente con www.google.it): ")
-	target_port=80
-	client=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	client.connect((target_host,target_port))
-	client.send("GET / HTTP/1.1\r\nHost: google.com\r\n\r\n")
-	response=client.recv(4056)
-	print response
+    target_host=raw_input("Inserire il target Host (prova inizialmente con www.google.it): ")
+    target_port=80
+    client=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((target_host,target_port))
+    client.send("GET / HTTP/1.1\r\nHost: google.com\r\n\r\n")
+    response=client.recv(4056)
+    print response
 	
 	
 def main():
-	while (f==0):
-		wall()
-		print"1)Client-TCP"
-		print"9)Versione"
-		print"0)Esci"
-		scelta=input("Scelta: ")
-		if scelta==1:
-			client_tcp()
-			continuare()
-			time.sleep(2)
-		elif scelta==0:
-			os.system("exit")
-			time.sleep(2)
-		elif scelta==9:
-			print"La versione attuale è la 0.1"
-			time.sleep(2)
-	
+    while (f==0):
+        wall()
+        print"1)Client-TCP"
+        print"9)Versione"
+        print"0)Esci"
+        scelta=input("Scelta: ")
+        if scelta==1:
+            client_tcp()
+            continuare()
+            time.sleep(2)
+        elif scelta==0:
+            os.system("exit")
+            time.sleep(2)
+        elif scelta==9:
+            print"La versione attuale è la 0.1"
+            time.sleep(2)
+
 if __name__ == "__main__":
-	main()
+    main()
